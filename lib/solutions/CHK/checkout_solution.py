@@ -8,7 +8,7 @@ def checkout(skus):
         'B': {'price': 30, 'special_offer': [{'count': 2, 'price': 45}]},
         'C': {'price': 20, 'special_offer': []},
         'D': {'price': 15, 'special_offer': []},
-        'E': {'price': 40, 'special_offer': []},
+        'E': {'price': 40, 'special_offer': [{'count': 3, 'price': 80}]},
     }
 
     item_count = {
@@ -16,6 +16,7 @@ def checkout(skus):
         'B': 0,
         'C': 0,
         'D': 0,
+        'E': 0,
     }
 
     total_price = 0
@@ -27,10 +28,10 @@ def checkout(skus):
             return -1
     
     for item, count in item_count.items():
-        special = price_table[item]['special_offer']
+        special_offer = price_table[item]['special_offer']
         unit_price = price_table[item]['price']
 
-        if special:
+        if special_offer:
             special_count = special['count']
             special_price = special['price']
 
@@ -42,4 +43,5 @@ def checkout(skus):
             total_price += count * unit_price
     
     return total_price
+
 
