@@ -7,6 +7,15 @@ class TestCheckout():
     
     def test_checkout_STXZZ(self):
         assert checkout_solution.checkout('STXZZ') == 82
+    
+    def test_checkout_KK(self):
+        assert checkout_solution.checkout('KK') == 120
+    
+    def test_checkout_KKK(self):
+        assert checkout_solution.checkout('KKK') == 190
+    
+    def test_checkout_KKKK(self):
+        assert checkout_solution.checkout('KKKK') == 240
 
     def test_checkout_AAAB(self):
         assert checkout_solution.checkout('AAAB') == 160
@@ -100,5 +109,6 @@ class TestCheckout():
     
     def test_checkout_VVVVVV(self):
         assert checkout_solution.checkout('VVVVVV') == 260
+
 
 
