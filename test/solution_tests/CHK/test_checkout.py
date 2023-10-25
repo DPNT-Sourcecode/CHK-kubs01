@@ -52,3 +52,13 @@ class TestCheckout():
     
     def test_checkout_EEEEBB(self):
         assert checkout_solution.checkout('EEEEBB') == 160
+    
+    def test_checkout_FF(self):
+        assert checkout_solution.checkout('FF') == 20
+    
+    def test_checkout_FFF(self):
+        assert checkout_solution.checkout('FFF') == 20
+    
+    def test_checkout_FFFFFF(self):
+        assert checkout_solution.checkout('FFFFFF') == 40
+
