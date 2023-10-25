@@ -83,4 +83,16 @@ class TestCheckout():
     def test_checkout_RRRQ(self):
         assert checkout_solution.checkout('RRRQ') == 150
     
+    def test_checkout_UUUU(self):
+        assert checkout_solution.checkout('UUUU') == 120
+    
+    def test_checkout_VV(self):
+        assert checkout_solution.checkout('VV') == 90
+    
+    def test_checkout_VVV(self):
+        assert checkout_solution.checkout('VVV') == 130
+    
+    def test_checkout_VVVVVV(self):
+        assert checkout_solution.checkout('VVVVVV') == 260
+
 
