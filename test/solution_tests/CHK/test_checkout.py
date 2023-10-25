@@ -1,4 +1,4 @@
-from solutions.CHK import checkout_solution
+from lib.solutions.CHK import checkout_solution
 
 
 class TestCheckout():
@@ -16,5 +16,3 @@ class TestCheckout():
     
     def test_checkout_ABCD(self):
         assert checkout_solution.checkout('CDBA') == 115
-
-    
