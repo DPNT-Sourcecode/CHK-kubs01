@@ -60,7 +60,8 @@ def checkout(skus):
     total_price += group_special_count * 45
 
     for _ in range(group_special_count * 3):
-        max_item = max(group_items, key=lambda x: price_table[x]['price'])
+        available_group_items = [item for item in group_items if item_count[item] > 0]
+        max_item = max(available_group_items, key=lambda x: price_table[x]['price'])
         if item_count[max_item] > 0:
             item_count[max_item] -= 1
 
@@ -81,4 +82,5 @@ def checkout(skus):
         total_price += count * unit_price
     
     return total_price
+
 
