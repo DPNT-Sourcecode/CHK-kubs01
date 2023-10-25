@@ -53,6 +53,7 @@ def checkout(skus):
         free_count = item_count[item] // required_count
         item_count[free_item] = max(0, item_count[free_item] - free_count)
     
+    import pdb; pdb.set_trace()
     group_items = ['S', 'T', 'X', 'Y', 'Z']
     group_count = sum(item_count[item] for item in group_items)
     group_special_count = group_count // 3
@@ -80,3 +81,4 @@ def checkout(skus):
         total_price += count * unit_price
     
     return total_price
+

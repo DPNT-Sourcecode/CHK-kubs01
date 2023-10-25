@@ -2,6 +2,12 @@ from lib.solutions.CHK import checkout_solution
 
 
 class TestCheckout():
+    def test_checkout_STX(self):
+        assert checkout_solution.checkout('STX') == 45
+    
+    def test_checkout_STXZZ(self):
+        assert checkout_solution.checkout('STXZZ') == 37
+
     def test_checkout_AAAB(self):
         assert checkout_solution.checkout('AAAB') == 160
 
@@ -94,9 +100,4 @@ class TestCheckout():
     
     def test_checkout_VVVVVV(self):
         assert checkout_solution.checkout('VVVVVV') == 260
-    
-    def test_checkout_STX(self):
-        assert checkout_solution.checkout('STX') == 45
-    
-    def test_checkout_STXZZ(self):
-        assert checkout_solution.checkout('STXZZ') == 37
+
