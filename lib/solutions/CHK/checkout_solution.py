@@ -36,4 +36,11 @@ def checkout(skus):
             num_specials = count // special_count
             num_remaining = count % special_count
 
+            total_price += (num_specials * special_price) + (num_remaining * unit_price)
+        else: # no special
+            total_price += count * unit_price
+    
+    return total_price
+
+
 
