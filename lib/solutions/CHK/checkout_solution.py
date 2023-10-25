@@ -53,6 +53,14 @@ def checkout(skus):
         free_count = item_count[item] // required_count
         item_count[free_item] = max(0, item_count[free_item] - free_count)
     
+    group_items = ['S', 'T', 'X', 'Y', 'Z']
+    group_count = sum(item_count[item] for item in group_items)
+    group_special_count = group_count // 3
+    total_price = group_special_count * 45
+
+    for _ in range(group_special_count * 3):
+        max_item = max(group_items, key=lambda x: price_table)
+
     for item, count in item_count.items():
         special_offers = sorted(price_table[item]['special_offers'], key=lambda x: x['count'], reverse=True)
         unit_price = price_table[item]['price']
@@ -70,5 +78,6 @@ def checkout(skus):
         total_price += count * unit_price
     
     return total_price
+
 
 
