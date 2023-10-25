@@ -62,6 +62,25 @@ class TestCheckout():
     def test_checkout_FFFFFF(self):
         assert checkout_solution.checkout('FFFFFF') == 40
     
-    def test_checkout_HHHHHHHHHH(self):
-        assert checkout_solution.checkout('FFFFFF') == 40
+    def test_checkout_HHHHH(self):
+        assert checkout_solution.checkout('HHHHH') == 45
     
+    def test_checkout_HHHHHHHHHH(self):
+        assert checkout_solution.checkout('HHHHHHHHHH') == 80
+    
+    def test_checkout_KK(self):
+        assert checkout_solution.checkout('KK') == 150
+    
+    def test_checkout_NNNM(self):
+        assert checkout_solution.checkout('NNNM') == 120
+    
+    def test_checkout_PPPPP(self):
+        assert checkout_solution.checkout('PPPPP') == 200
+    
+    def test_checkout_QQQ(self):
+        assert checkout_solution.checkout('QQQ') == 80
+    
+    def test_checkout_RRRQ(self):
+        assert checkout_solution.checkout('RRRQ') == 150
+    
+
