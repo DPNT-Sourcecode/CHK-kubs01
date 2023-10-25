@@ -100,6 +100,3 @@ class TestCheckout():
     
     def test_checkout_STXZZ(self):
         assert checkout_solution.checkout('STXZZ') == 37
-
-
-
