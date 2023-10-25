@@ -4,11 +4,11 @@
 # skus = unicode string
 def checkout(skus):
     price_table = {
-        'A': {'price': 50, 'special_offer': [{'count': 5, 'price': 200}, {'count': 3, 'price': 130}]},
-        'B': {'price': 30, 'special_offer': [{'count': 2, 'price': 45}]},
-        'C': {'price': 20, 'special_offer': []},
-        'D': {'price': 15, 'special_offer': []},
-        'E': {'price': 40, 'special_offer': [{'count': 3, 'price': 80}]},
+        'A': {'price': 50, 'special_offers': [{'count': 5, 'price': 200}, {'count': 3, 'price': 130}]},
+        'B': {'price': 30, 'special_offers': [{'count': 2, 'price': 45}]},
+        'C': {'price': 20, 'special_offers': []},
+        'D': {'price': 15, 'special_offers': []},
+        'E': {'price': 40, 'special_offers': [{'count': 3, 'price': 80}]},
     }
 
     item_count = {
@@ -28,20 +28,22 @@ def checkout(skus):
             return -1
     
     for item, count in item_count.items():
-        special_offer = price_table[item]['special_offer']
+        special_offers = sorted(price_table[item]['special_offers'], key=lambda x: x['count'], reverse=True)
         unit_price = price_table[item]['price']
 
-        if special_offer:
-            special_count = special['count']
-            special_price = special['price']
+        if special_offers:
+            for special_offer in special_offers:
+                special_count = special_offers['count']
+                special_price = special_offers['price']
 
-            num_specials = count // special_count
-            num_remaining = count % special_count
+                num_specials = count // special_count
+                num_remaining = count % special_count
 
-            total_price += (num_specials * special_price) + (num_remaining * unit_price)
-        else: # no special
+                total_price += (num_specials * special_price) + (num_remaining * unit_price)
+        else: # no special offer
             total_price += count * unit_price
     
     return total_price
+
 
 
