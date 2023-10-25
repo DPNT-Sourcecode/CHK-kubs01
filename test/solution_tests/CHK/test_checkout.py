@@ -35,5 +35,10 @@ class TestCheckout():
     def test_checkout_AAAEE(self):
         assert checkout_solution.checkout('AAAEE') == 210
     
+    def test_checkout_AAAAAEE(self):
+        assert checkout_solution.checkout('AAAAAEE') == 280
+    
+    def test_checkout_AAAAAAEE(self):
+        assert checkout_solution.checkout('AAAAAAEE') == 330
 
 
