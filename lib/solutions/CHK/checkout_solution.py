@@ -16,7 +16,20 @@ def checkout(skus):
         'J': {'price': 60, 'special_offers': []},
         'K': {'price': 80, 'special_offers': [{'count': 2, 'price': 150}]},
         'L': {'price': 90, 'special_offers': []},
-
+        'M': {'price': 15, 'special_offers': []},
+        'N': {'price': 40, 'special_offers': []},
+        'O': {'price': 10, 'special_offers': []},
+        'P': {'price': 50, 'special_offers': [{'count': 5, 'price': 200}]},
+        'Q': {'price': 30, 'special_offers': []},
+        'R': {'price': 50, 'special_offers': []},
+        'S': {'price': 30, 'special_offers': []},
+        'T': {'price': 20, 'special_offers': []},
+        'U': {'price': 40, 'special_offers': []},
+        'V': {'price': 50, 'special_offers': []},
+        'W': {'price': 20, 'special_offers': []},
+        'X': {'price': 90, 'special_offers': []},
+        'Y': {'price': 10, 'special_offers': []},
+        'Z': {'price': 50, 'special_offers': []},
     }
 
     item_count = {
@@ -61,6 +74,7 @@ def checkout(skus):
         total_price += count * unit_price
     
     return total_price
+
 
 
 
