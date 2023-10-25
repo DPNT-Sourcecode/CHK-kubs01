@@ -23,7 +23,7 @@ def checkout(skus):
         if item in item_count:
             item_count[item] += 1
         else:
-            return # illegal input
+            return -1
     
     for item, count in item_count.items():
         special = price_table[item]['special_offer']
@@ -41,6 +41,7 @@ def checkout(skus):
             total_price += count * unit_price
     
     return total_price
+
 
 
 
