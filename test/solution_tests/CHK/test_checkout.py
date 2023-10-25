@@ -19,5 +19,3 @@ class TestCheckout():
     
     def test_checkout_XYZ(self):
         assert checkout_solution.checkout('XYZ') == -1
-
-
