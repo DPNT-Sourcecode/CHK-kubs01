@@ -49,8 +49,6 @@ class TestCheckout():
     
     def test_checkout_EEEB(self):
         assert checkout_solution.checkout('EEEB') == 120
-
-
-
-
-
+    
+    def test_checkout_EEEEBB(self):
+        assert checkout_solution.checkout('EEEEBB') == 160
