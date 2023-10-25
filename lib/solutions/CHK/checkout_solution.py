@@ -20,12 +20,12 @@ def checkout(skus):
         'N': {'price': 40, 'special_offers': []},
         'O': {'price': 10, 'special_offers': []},
         'P': {'price': 50, 'special_offers': [{'count': 5, 'price': 200}]},
-        'Q': {'price': 30, 'special_offers': []},
+        'Q': {'price': 30, 'special_offers': [{'count': 3, 'price': 80}]},
         'R': {'price': 50, 'special_offers': []},
         'S': {'price': 30, 'special_offers': []},
         'T': {'price': 20, 'special_offers': []},
         'U': {'price': 40, 'special_offers': []},
-        'V': {'price': 50, 'special_offers': []},
+        'V': {'price': 50, 'special_offers': [{'count': 3, 'price': 130}, {'count': 2, 'price': 90}]},
         'W': {'price': 20, 'special_offers': []},
         'X': {'price': 90, 'special_offers': []},
         'Y': {'price': 10, 'special_offers': []},
@@ -49,13 +49,9 @@ def checkout(skus):
         else:
             return -1
     
-    if item_count['E'] >= 2:
-        free_bs = item_count['E'] // 2
-        item_count['B'] = max(0, item_count['B'] - free_bs)
-    
-    if item_count['F'] >= 3:
-        free_fs = item_count['F'] // 3
-        item_count['F'] -= free_fs
+    special_cases = {'E': ('B', 2)}
+    for item, (free_item, required_count) in special_cases.items():
+        free_count = item_count[item] // required_count
     
     for item, count in item_count.items():
         special_offers = sorted(price_table[item]['special_offers'], key=lambda x: x['count'], reverse=True)
@@ -74,6 +70,7 @@ def checkout(skus):
         total_price += count * unit_price
     
     return total_price
+
 
 
 
