@@ -49,9 +49,16 @@ def checkout(skus):
         else:
             return -1
     
-    special_cases = {'E': ('B', 2)}
+    special_cases = {
+        'E': ('B', 2),
+        'F': ('F', 3),
+        'N': ('M', 3),
+        'R': ('Q', 3),
+        'U': ('U', 4),
+    }
     for item, (free_item, required_count) in special_cases.items():
         free_count = item_count[item] // required_count
+        item_count[free_item] = max(0, item_count[free_item] - free_count)
     
     for item, count in item_count.items():
         special_offers = sorted(price_table[item]['special_offers'], key=lambda x: x['count'], reverse=True)
@@ -70,6 +77,7 @@ def checkout(skus):
         total_price += count * unit_price
     
     return total_price
+
 
 
 
