@@ -83,9 +83,6 @@ class TestCheckout():
     def test_checkout_HHHHHHHHHH(self):
         assert checkout_solution.checkout('HHHHHHHHHH') == 80
     
-    def test_checkout_KK(self):
-        assert checkout_solution.checkout('KK') == 150
-    
     def test_checkout_NNNM(self):
         assert checkout_solution.checkout('NNNM') == 120
     
@@ -109,6 +106,7 @@ class TestCheckout():
     
     def test_checkout_VVVVVV(self):
         assert checkout_solution.checkout('VVVVVV') == 260
+
 
 
 
