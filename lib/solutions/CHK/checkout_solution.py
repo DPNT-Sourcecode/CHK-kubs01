@@ -4,10 +4,11 @@
 # skus = unicode string
 def checkout(skus):
     price_table = {
-        'A': {'price': 50, 'special_offer': {'count': 3, 'price': 130}},
-        'B': {'price': 30, 'special_offer': {'count': 2, 'price': 45}},
-        'C': {'price': 20, 'special_offer': None},
-        'D': {'price': 15, 'special_offer': None},
+        'A': {'price': 50, 'special_offer': [{'count': 5, 'price': 200}, {'count': 3, 'price': 130}]},
+        'B': {'price': 30, 'special_offer': [{'count': 2, 'price': 45}]},
+        'C': {'price': 20, 'special_offer': []},
+        'D': {'price': 15, 'special_offer': []},
+        'E': {'price': 40, 'special_offer': []},
     }
 
     item_count = {
@@ -41,3 +42,4 @@ def checkout(skus):
             total_price += count * unit_price
     
     return total_price
+
