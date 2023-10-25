@@ -19,3 +19,21 @@ class TestCheckout():
     
     def test_checkout_XYZ(self):
         assert checkout_solution.checkout('XYZ') == -1
+    
+    def test_checkout_E(self):
+        assert checkout_solution.checkout('E') == 40
+    
+    def test_checkout_EE(self):
+        assert checkout_solution.checkout('EE') == 80
+    
+    def test_checkout_EEE(self):
+        assert checkout_solution.checkout('EEE') == 80
+    
+    def test_checkout_EEEE(self):
+        assert checkout_solution.checkout('EEEE') == 120
+
+    def test_checkout_AAAEE(self):
+        assert checkout_solution.checkout('AAAEE') == 210
+    
+
+
