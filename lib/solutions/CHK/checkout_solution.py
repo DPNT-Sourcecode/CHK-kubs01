@@ -26,7 +26,7 @@ def checkout(skus):
             return # illegal input
     
     for item, count in item_count.items():
-        special = price_table[item]['special']
+        special = price_table[item]['special_offer']
         unit_price = price_table[item]['price']
 
         if special:
@@ -41,6 +41,7 @@ def checkout(skus):
             total_price += count * unit_price
     
     return total_price
+
 
 
 
