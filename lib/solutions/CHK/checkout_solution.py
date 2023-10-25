@@ -14,7 +14,7 @@ def checkout(skus):
         'H': {'price': 10, 'special_offers': [{'count': 10, 'price': 80}, {'count': 5, 'price': 45}]},
         'I': {'price': 35, 'special_offers': []},
         'J': {'price': 60, 'special_offers': []},
-        'K': {'price': 80, 'special_offers': [{'count': 2, 'price': 150}]},
+        'K': {'price': 70, 'special_offers': [{'count': 2, 'price': 150}]},
         'L': {'price': 90, 'special_offers': []},
         'M': {'price': 15, 'special_offers': []},
         'N': {'price': 40, 'special_offers': []},
@@ -22,7 +22,7 @@ def checkout(skus):
         'P': {'price': 50, 'special_offers': [{'count': 5, 'price': 200}]},
         'Q': {'price': 30, 'special_offers': [{'count': 3, 'price': 80}]},
         'R': {'price': 50, 'special_offers': []},
-        'S': {'price': 30, 'special_offers': []},
+        'S': {'price': 20, 'special_offers': []},
         'T': {'price': 20, 'special_offers': []},
         'U': {'price': 40, 'special_offers': []},
         'V': {'price': 50, 'special_offers': [{'count': 3, 'price': 130}, {'count': 2, 'price': 90}]},
@@ -32,34 +32,7 @@ def checkout(skus):
         'Z': {'price': 21, 'special_offers': []},
     }
 
-    item_count = {
-        'A': 0,
-        'B': 0,
-        'C': 0,
-        'D': 0,
-        'E': 0,
-        'F': 0,
-        'G': 0,
-        'H': 0,
-        'I': 0,
-        'J': 0,
-        'K': 0,
-        'L': 0,
-        'M': 0,
-        'N': 0,
-        'O': 0,
-        'P': 0,
-        'Q': 0,
-        'R': 0,
-        'S': 0,
-        'T': 0,
-        'U': 0,
-        'V': 0,
-        'W': 0,
-        'X': 0,
-        'Y': 0,
-        'Z': 0,
-    }
+    item_count = {item: 0 for item in price_table.keys()}
 
     total_price = 0
 
@@ -97,4 +70,5 @@ def checkout(skus):
         total_price += count * unit_price
     
     return total_price
+
 
