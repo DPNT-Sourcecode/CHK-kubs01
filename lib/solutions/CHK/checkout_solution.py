@@ -22,4 +22,18 @@ def checkout(skus):
     for item in skus:
         if item in item_count:
             item_count[item] += 1
+        else:
+            return # illegal input
+    
+    for item, count in item_count.items():
+        special = price_table[item]['special']
+        unit_price = price_table[item]['price']
+
+        if special:
+            special_count = special['count']
+            special_price = special['price']
+
+            num_specials = count // special_count
+            num_remaining = count % special_count
+
 
