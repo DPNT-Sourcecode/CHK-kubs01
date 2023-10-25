@@ -59,7 +59,9 @@ def checkout(skus):
     total_price = group_special_count * 45
 
     for _ in range(group_special_count * 3):
-        max_item = max(group_items, key=lambda x: price_table)
+        max_item = max(group_items, key=lambda x: price_table[x]['price'])
+        if item_count[max_item] > 0:
+            item_count[max_item] -= 1
 
     for item, count in item_count.items():
         special_offers = sorted(price_table[item]['special_offers'], key=lambda x: x['count'], reverse=True)
@@ -78,6 +80,7 @@ def checkout(skus):
         total_price += count * unit_price
     
     return total_price
+
 
 
 
