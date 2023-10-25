@@ -28,6 +28,8 @@ def checkout(skus):
             return -1
     
     if item_count['E'] >= 2:
+        free_bs = item_count['E'] // 2
+        item_count['B'] = max(0, item_count['B'] - free_bs)
     
     for item, count in item_count.items():
         special_offers = sorted(price_table[item]['special_offers'], key=lambda x: x['count'], reverse=True)
@@ -46,6 +48,7 @@ def checkout(skus):
         total_price += count * unit_price
     
     return total_price
+
 
 
 
